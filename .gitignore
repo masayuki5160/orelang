@@ -1,0 +1,5 @@
+# binディレクトリは無視
+bin/
+.settings/
+.classpath
+.project
