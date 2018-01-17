@@ -6,7 +6,8 @@ import java.util.Map;
 
 public class Engine {
 	
-	private Map<String, IOperator> operators = new HashMap<String, IOperator>();
+	public Map<String, IOperator> operators = new HashMap<String, IOperator>();
+	public Map<String, Object> variables = new HashMap<String, Object>();
 
 	public Engine() {
 		operators.put("+", new AddOperator());

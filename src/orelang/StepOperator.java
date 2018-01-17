@@ -5,9 +5,12 @@ import java.util.List;
 public class StepOperator implements IOperator {
 
 	@Override
-	public Object call(Engine engin, List<?> args) {
-		// TODO Auto-generated method stub
-		return null;
+	public Object call(Engine engine, List<?> args) {
+		Object retVal = null;
+		for(Object arg:args) {
+			retVal = engine.eval(arg);
+		}
+		return retVal;
 	}
 
 }
