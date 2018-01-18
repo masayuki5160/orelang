@@ -4,6 +4,16 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import orelang.operator.AddOperator;
+import orelang.operator.CallOperator;
+import orelang.operator.EqualOperator;
+import orelang.operator.GetOperator;
+import orelang.operator.IOperator;
+import orelang.operator.MultiplyOperator;
+import orelang.operator.SetOperator;
+import orelang.operator.StepOperator;
+import orelang.operator.UntilOperator;
+
 public class Engine {
 	
 	public Map<String, IOperator> operators = new HashMap<String, IOperator>();
