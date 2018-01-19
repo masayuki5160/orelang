@@ -2,10 +2,16 @@ package orelang.test;
 
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
+
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 import org.junit.Before;
 import org.junit.Test;
 import junit.framework.Assert;
 import net.arnx.jsonic.JSON;
+import net.arnx.jsonic.JSONException;
 import orelang.Engine;
 
 public class TestOrelang {
@@ -30,8 +36,8 @@ public class TestOrelang {
 	}
 
 	@Test
-	public void 簡単な四則演算を実行できる() {
-		Object result = engine.eval(JSON.decode("[\"+\", 1, 2, [\"*\", 3, 4]]"));
+	public void 簡単な四則演算を実行できる() throws JSONException, FileNotFoundException, IOException {
+		Object result = engine.eval(JSON.decode(new FileReader("src/orelang/test/testAddOp.json")));
 		
 		// TODO toString()してるけど他に方法がないか？
 		assertThat(result.toString(), is("15"));
